@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../clotho3PythonAPI/.idea/clotho3PythonAPI.iml" filepath="$PROJECT_DIR$/../clotho3PythonAPI/.idea/clotho3PythonAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/phagebookPythonAPI.iml" filepath="$PROJECT_DIR$/.idea/phagebookPythonAPI.iml" />
     </modules>
   </component>
