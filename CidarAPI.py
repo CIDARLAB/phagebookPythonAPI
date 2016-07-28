@@ -47,6 +47,9 @@ class Client:
         s.setblocking(False)
         try:
             s.connect((self.serverURL,self.port))
+        except ConnectionError:
+            print("Socket connection refused")
+            return Q_Deferred()
         except BlockingIOError:
             # This will always occur simply because blocking is disabled,
             # despite socket connections always requiring blocking (waiting for connection).
@@ -77,7 +80,7 @@ class Client:
         return deferred  # Google/Youtube it if you don't know what deferred is
 
     def resolve_queue(self):
-        while self.pendingRequests is not None:
+        while self.pendingRequests is not 0:
             events = self.selector.select()
             for key, mask in events:
                 event_handler = key.data
@@ -88,7 +91,6 @@ class Client:
         self.selector.unregister(s.fileno())
 
         s.send(outgoing_message.encode())  # byte string message
-
         # now register to listen for a message
         receive_buffer = []
         callback = lambda: self._on_message(s, receive_buffer)
@@ -117,49 +119,12 @@ class Client:
         else:
             # done receiving. parse the message
             print("Done receiving")
+            receivedString = b''.join(buffer).decode()
             try:
-                mappedData = json.loads((b''.join(buffer)).decode())
+                mappedData = json.loads(receivedString)
                 if self._no_data_is_missing_in(mappedData):
                     callback = self.callBackHash[mappedData["channel"] + str(mappedData["requestId"])]
                     callback(mappedData["data"])  # Undefined callbacks simply won't be executed
             except:
-                print("_on_message: Unable to map received data to dictionary")
+                print("_on_message: Unable to map received data to dictionary (%s)" % receivedString)
             self.pendingRequests -= 1
-
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-#         Helper Functions to handle deferred objects       #
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-# def _send_when_ready(client, channel, data, options):
-#     return client.emit(channel, data, options)
-#
-# def _add_callback(deferred, callback):
-#     return deferred.addCallBack(callback)
-#
-# def _add_errback(deferred, errback):
-#     return deferred.addErrBack(errback)
-
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-#      Master Object that creates connection to server      #
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-# class ServerConnection:
-#     def __init__(self, serverURL, port=80):
-#         self.serverURL = serverURL
-#         self.port = port
-#
-#     def emit(self, channel, data, options=None):
-#         if type(data) is not dict:
-#             self.incoming_connection = defer.Deferred()
-#             error("CidarAPI interface: data emitted must be dictionary")
-#             return self
-#         cidar_client = TCP4ClientEndpoint(reactor, self.serverURL, self.port)
-#         self.incoming_connection = cidar_client.connect(CidarFactory())
-#         self.incoming_connection.addCallback(_send_when_ready, channel, data, options)
-#         return self
-#
-#     def then(self, callback):
-#         self.incoming_connection.addCallback(_add_callback,callback)
-#         return self
-#
-#     def handle_error_with(self, errback):
-#         self.incoming_connection.addCallback(_add_errback,errback)
-#         return self
