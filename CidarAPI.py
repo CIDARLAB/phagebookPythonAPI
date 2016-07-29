@@ -23,8 +23,10 @@ class Client:
     def __init__(self, serverURL, port=80):
         self.serverURL = serverURL
         self.port = port
+
         self.selector = DefaultSelector()
         self.pendingRequests = 0
+
         self.requestId = -1  # A number that will be associated with each socket channel request (ask Prashant
                         # about this concept)
         self.callBackHash = {}  # We are using async programming. This is where we store the callbacks
@@ -35,9 +37,11 @@ class Client:
         #     sends info before socket is ready, handle this by storing those calls here (if any are made) and
         #     executing them in 'connectionMade'.'''
 
+
     def _new_request_id(self):
         self.requestId += 1
         return self.requestId
+
 
     # People can call "addCallBack(functionName)" to the returned deferred to
     # process received data later from the server.
@@ -45,6 +49,8 @@ class Client:
     def queue(self, channel, data, options=None):
         s = socket.socket()
         s.setblocking(False)
+
+
         try:
             s.connect((self.serverURL,self.port))
         except ConnectionError:
@@ -58,7 +64,7 @@ class Client:
             print("queue: Unidentified exception while trying to use socket")
             return Q_Deferred()
 
-        # Formatting data that's to be sent.
+
         requestId = self._new_request_id()
         message = {
             "channel": channel,
@@ -68,6 +74,7 @@ class Client:
         if options is not None:
             message["options"] = options
         message = json.dumps(message)  # stringified JSON
+
 
         # Pause with socket protocol. Instead, queue it in selector.
         callback = lambda: self._on_open(s, message)
@@ -79,6 +86,7 @@ class Client:
 
         return deferred  # Google/Youtube it if you don't know what deferred is
 
+
     def resolve_queue(self):
         while self.pendingRequests is not 0:
             events = self.selector.select()
@@ -86,17 +94,20 @@ class Client:
                 event_handler = key.data
                 event_handler()
 
+
     def _on_open(self, s, outgoing_message):
         print("Connection opened")
         self.selector.unregister(s.fileno())
 
         s.send(outgoing_message.encode())  # byte string message
-        # now register to listen for a message
+
         receive_buffer = []
         callback = lambda: self._on_message(s, receive_buffer)
         self.selector.register(s.fileno(), EVENT_READ, callback)
 
+
     def _no_data_is_missing_in(self,mappedData):
+
         received_item_checklist = {
             "channel"  :mappedData.get("channel"),
             "requestId":mappedData.get("requestId"),
@@ -106,20 +117,25 @@ class Client:
             if received_item_checklist[category] is None:  # a.k.a. missing
                 print("_no_data_is_missing_in: data from server does not contain %s", category)
                 return False
+
         return True
+
 
     def _on_message(self, s, buffer):
         print("Message received")
         self.selector.unregister(s.fileno())
+
         chunk = s.recv(1000)
         if chunk:   # still have something to receive
             buffer.append(chunk)
             callback = lambda: self._on_message(s, buffer)
             self.selector.register(s.fileno(), EVENT_READ, callback)
+
         else:
             # done receiving. parse the message
             print("Done receiving")
             receivedString = b''.join(buffer).decode()
+
             try:
                 mappedData = json.loads(receivedString)
                 if self._no_data_is_missing_in(mappedData):
@@ -127,4 +143,5 @@ class Client:
                     callback(mappedData["data"])  # Undefined callbacks simply won't be executed
             except:
                 print("_on_message: Unable to map received data to dictionary (%s)" % receivedString)
+
             self.pendingRequests -= 1
