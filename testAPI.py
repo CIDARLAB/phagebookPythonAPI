@@ -20,16 +20,21 @@ def save_order_id(data):
     for order in data:
         print(order)
 
-print("!!!!!!!! Start protocol !!!!!!!!!\n")
+username = "1234@qwer.com"
+password = 1234
 
+print("!!!!!!!! Start protocol !!!!!!!!!\n")
 start = time.time()
-phagebook.create_status("joonhohan365@gmail.com","12345","Weehee PB API Works! ID: %f" % random()).then(print)
-phagebook.get_projects("joonhohan365@gmail.com","12345").then(save_proj_id)
-phagebook.get_project("joonhohan365@gmail.com","12345",tempProjectID).then(print)
-phagebook.create_project_status("joonhohan365@gmail.com","12345",tempProjectID,"Project status # %f" % random()).then(print)
-phagebook.get_orders("joonhohan365@gmail.com","12345").then(save_order_id)
-phagebook.get_order("joonhohan365@gmail.com","12345",tempOrderID).then(print)
-phagebook.change_ordering_status("joonhohan365@gmail.com","12345",tempOrderID,"Order status # %f" % random()).then(print)
+
+phagebook.create_status(username,password,"Weehee PB API Works! ID: %f" % random()).then(print)
+
+phagebook.get_projects(username,password).then(save_proj_id)
+phagebook.get_project(username,password,tempProjectID).then(print)
+phagebook.create_project_status(username,password,tempProjectID,"Project status # %f" % random()).then(print)
+
+phagebook.get_orders(username,password).then(save_order_id)
+phagebook.get_order(username,password,tempOrderID).then(print)
+phagebook.change_ordering_status(username, password, tempOrderID, phagebook.APPROVED).then(print)
 
 phagebook.resolve_queue()
 

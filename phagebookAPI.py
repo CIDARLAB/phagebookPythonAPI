@@ -3,9 +3,16 @@ import CidarAPI
 # Socket implementation is in phagebookClient class.
 # Protocol implementation is in this class.
 
-############### YOU CANNOT HAVE MULTIPLE PHAGEBOOK INSTANCES IN ONE PROGRAM ##############
 class Phagebook:
     def __init__(self, phagebookURL, port=80):
+
+        # Order status types
+        self.INPROGRESS = "INPROGRESS"
+        self.APPROVED = "APPROVED"
+        self.SUBMITTED = "SUBMITTED"
+        self.DENIED = "DENIED"
+        self.RECEIVED = "RECEIVED"
+
         self.phagebookClient = CidarAPI.Client(phagebookURL, port)
 
     def _format_data(self, userEmail, password, objectId=None, status=None):

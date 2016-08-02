@@ -1,6 +1,5 @@
 from selectors import DefaultSelector, EVENT_WRITE, EVENT_READ
 from twisted.internet import defer
-from logging import error, debug
 import socket
 import json
 # Import twisted API for deferred object (download with pip by doing [sudo pip3 install twisted]).
@@ -31,11 +30,6 @@ class Client:
                         # about this concept)
         self.callBackHash = {}  # We are using async programming. This is where we store the callbacks
                            # to process the retrieved info
-        # self.messageCache = []
-        # '''Asynchronous programming is usually single-threaded so the WebSocket will not send
-        #     info until it opens connection or is ready to send. In the off chance the user writes a script that
-        #     sends info before socket is ready, handle this by storing those calls here (if any are made) and
-        #     executing them in 'connectionMade'.'''
 
 
     def _new_request_id(self):
@@ -43,13 +37,9 @@ class Client:
         return self.requestId
 
 
-    # People can call "addCallBack(functionName)" to the returned deferred to
-    # process received data later from the server.
-    # The 'functionName' is a function that handles received data. Data type depends on protocol.
     def queue(self, channel, data, options=None):
         s = socket.socket()
         s.setblocking(False)
-
 
         try:
             s.connect((self.serverURL,self.port))
@@ -58,12 +48,11 @@ class Client:
             return Q_Deferred()
         except BlockingIOError:
             # This will always occur simply because blocking is disabled,
-            # despite socket connections always requiring blocking (waiting for connection).
+            # Socket connections always require code blocking.
             pass
         except:
             print("queue: Unidentified exception while trying to use socket")
             return Q_Deferred()
-
 
         requestId = self._new_request_id()
         message = {
@@ -75,8 +64,7 @@ class Client:
             message["options"] = options
         message = json.dumps(message)  # stringified JSON
 
-
-        # Pause with socket protocol. Instead, queue it in selector.
+        # Pause on socket communication. Instead, queue socket in selector.
         callback = lambda: self._on_open(s, message)
         self.selector.register(s.fileno(), EVENT_WRITE, callback)
         self.pendingRequests += 1
@@ -130,7 +118,6 @@ class Client:
             buffer.append(chunk)
             callback = lambda: self._on_message(s, buffer)
             self.selector.register(s.fileno(), EVENT_READ, callback)
-
         else:
             # done receiving. parse the message
             print("Done receiving")
