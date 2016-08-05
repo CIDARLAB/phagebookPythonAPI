@@ -6,14 +6,14 @@ phagebook = phagebookAPI.Phagebook()
 username = "1234@qwer.com"
 password = 1234
 
-def callboth(data):
+def projects_callback(data):
     global username
     global password
     print("Received Projects: " + str(data))
     phagebook.get_project(username,password,data[0]["projectId"]).then(print)
     phagebook.create_project_status(username,password,data[0]["projectId"],"Project status # %f" % random()).then(print)
 
-def callall(data):
+def orders_callback(data):
     global username
     global password
     print("Received Orders: " + str(data))
@@ -24,8 +24,8 @@ print("!!!!!!!! Start protocol !!!!!!!!!\n")
 start = time.time()
 
 phagebook.create_status(username,password,"Weehee PB API Works! ID: %f" % random()).then(print)
-phagebook.get_projects(username,password).then(callboth)
-phagebook.get_orders(username,password).then(callall)
+phagebook.get_projects(username,password).then(projects_callback)
+phagebook.get_orders(username,password).then(orders_callback)
 
 while phagebook.phagebookClient.socket.pendingRequests:
     pass
