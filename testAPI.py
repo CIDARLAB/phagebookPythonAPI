@@ -2,7 +2,7 @@ from random import random
 import phagebookAPI
 import time
 
-phagebook = phagebookAPI.Phagebook("ws://localhost:9090/websocket/")
+phagebook = phagebookAPI.Phagebook()
 username = "1234@qwer.com"
 password = 1234
 
