@@ -1,4 +1,4 @@
-from selectors import DefaultSelector, EVENT_WRITE, EVENT_READ
+"""from selectors import DefaultSelector, EVENT_WRITE, EVENT_READ
 from twisted.internet import defer
 import socket
 import json
@@ -113,7 +113,7 @@ class Client:
         print("Message received")
         self.selector.unregister(s.fileno())
 
-        chunk = s.recv(1000)
+        chunk = s.recv()
         if chunk:   # still have something to receive
             buffer.append(chunk)
             callback = lambda: self._on_message(s, buffer)
@@ -131,4 +131,36 @@ class Client:
             except:
                 print("_on_message: Unable to map received data to dictionary (%s)" % receivedString)
 
-            self.pendingRequests -= 1
+            self.pendingRequests -= 1"""
+
+import websocket
+import threading
+import time
+
+def on_message(ws, message):
+    print("Received " + message)
+
+def on_error(ws, error):
+    print(error)
+
+def on_close(ws):
+    print("### closed ###")
+
+def on_open(ws):
+    def run(*args):
+        for i in range(10):
+            time.sleep(1)
+            ws.send("Hello %d" % i)
+        time.sleep(1)
+        ws.close()
+        print("thread terminating...")
+    threading._start_new_thread(run, ())
+
+if __name__ == "__main__":
+    websocket.enableTrace(True)
+    ws = websocket.WebSocketApp("ws://echo.websocket.org/",
+                                on_message = on_message,
+                                on_error = on_error,
+                                on_close = on_close,
+                                on_open=on_open)
+    ws.run_forever()
