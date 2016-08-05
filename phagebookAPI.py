@@ -1,6 +1,6 @@
-import CidarAPI2
+import CidarAPI
 
-# Socket implementation is in phagebookClient class.
+# Socket implementation is in CidarAPI class.
 # Protocol implementation is in this class.
 
 class Phagebook:
@@ -13,7 +13,7 @@ class Phagebook:
         self.DENIED = "DENIED"
         self.RECEIVED = "RECEIVED"
 
-        self.phagebookClient = CidarAPI2.Client(phagebookURL)
+        self.phagebookClient = CidarAPI.Client(phagebookURL)
 
     def _format_data(self, userEmail, password, objectId=None, status=None):
         data = {
@@ -46,6 +46,3 @@ class Phagebook:
 
     def change_ordering_status(self, userEmail, password, orderID, orderStatus):
         return self.phagebookClient.emit("CHANGE_ORDERING_STATUS", self._format_data(userEmail, password, orderID, orderStatus))
-    #
-    # def resolve_queue(self):
-    #     self.phagebookClient.resolve_queue()
