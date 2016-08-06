@@ -13,7 +13,7 @@ class Phagebook:
         self.DENIED = "DENIED"
         self.RECEIVED = "RECEIVED"
 
-        self.phagebookClient = CidarAPI.Client("ws://cidarlab.org:9090/websocket/")
+        self.phagebookClient = CidarAPI.ClientWebSocket("ws://cidarlab.org:9090/websocket/")
 
     def _format_data(self, userEmail, password, objectId=None, status=None):
         data = {

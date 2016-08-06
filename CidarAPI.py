@@ -16,13 +16,11 @@ class Q_Deferred:
     def callback(self, result=None):
         self.d.callback(result)
 
-class Client:
-
+class ClientWebSocket:
     def __init__(self, serverURL):
         self.requestId = -1  # A number that will be associated with each socket channel request (ask Prashant
                         # about this concept)
-
-        def _on_message(ws, message): ################################### assuming message is byte-string (UTF-8)
+        def _on_message(ws, message):
             print("Message received")
             try:
                 mappedData = json.loads(message)
@@ -43,7 +41,7 @@ class Client:
 
             ws.pendingRequests -= 1
             if ws.pendingRequests is 0:
-                ws.close();
+                ws.close()
 
         def _on_error(ws, error):
             print("_on_error:" + str(error))
@@ -65,9 +63,11 @@ class Client:
                                 on_open=_on_open)
         self.socket.attempting = False
         self.socket.pendingRequests = 0
-        self.socket.callBackHash = {}  # We are using async programming. This is where we store the callbacks
-                           # to process the retrieved info
-        self.socket.messageCache = [] # Sockets communications will be run on a separate thread
+        self.socket.callBackHash = {}  
+        # ^ We are using async programming. This is where we store the callbacks
+        # to process the retrieved info
+        self.socket.messageCache = [] 
+        # ^ Socket communications will be run on a separate thread
         # Since the socket may take time to open, we will cache the messages here so that
         # it sends the messages when the socket opens. This allows to do someting else while waiting for the socket to open.
 

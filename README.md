@@ -22,6 +22,8 @@ A normal desktop program executes functions/instructions one after another assum
 + **websocket-client 0.37.0:** Download to your python3 directory using pip3 `sudo pip3 install websocket-client` 
 
 + **phagebookAPI.py:** Download the Phagebook API and import it to your module.
+    
++ **Install Phagebook:** Follow the instructions outlined [here](https://github.com/CIDARLAB/phagebook/wiki/Getting-Started).
 
 ### Resources
 * [How Do Python Coroutines Work?](https://www.youtube.com/watch?v=7sCu4gEjH5I) (mentioned above)
