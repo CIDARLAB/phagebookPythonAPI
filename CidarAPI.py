@@ -47,7 +47,7 @@ class ClientWebSocket:
             print("_on_error:" + str(error))
 
         def _on_close(ws):
-            print("### closed ###")
+            print("### Cidar Socket closed.")
 
         def _on_open(ws):
             print("Connection opened")
@@ -76,7 +76,7 @@ class ClientWebSocket:
         self.socket.pendingRequests += 1
         try:
             self.socket.send(message.encode())
-        except websocket.WebSocketException as e: # Socket isn't open. open it. Attempt to open it only once
+        except websocket.WebSocketException: # Socket isn't open. open it. Attempt to open it only once
             print("Caching message: " + message)
             if not self.socket.attempting:
                 threading._start_new_thread(self.socket.run_forever, ())

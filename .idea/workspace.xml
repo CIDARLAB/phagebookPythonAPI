@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b1156b-d5ec-42e8-a0cc-8bbe00deceb1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../clotho3PythonAPI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../clotho3PythonAPI/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py" afterPath="$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../clotho3PythonAPI/README.md" afterPath="$PROJECT_DIR$/../clotho3PythonAPI/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../clotho3PythonAPI/clotho3API.py" afterPath="$PROJECT_DIR$/../clotho3PythonAPI/clotho3API.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../clotho3PythonAPI/testAPI.py" afterPath="$PROJECT_DIR$/../clotho3PythonAPI/testAPI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CidarAPI.py" afterPath="$PROJECT_DIR$/CidarAPI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phagebookAPI.py" afterPath="$PROJECT_DIR$/phagebookAPI.py" />
     </list>
     <ignored path="phagebookPythonAPI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +32,8 @@
       <file leaf-file-name="testAPI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/testAPI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -42,9 +46,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-              <folding>
-                <element signature="e#1627#1744#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,12 +82,12 @@
         <option value="$PROJECT_DIR$/testsocket.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
         <option value="$PROJECT_DIR$/CidarAPI2.py" />
-        <option value="$PROJECT_DIR$/CidarAPI.py" />
-        <option value="$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py" />
         <option value="$PROJECT_DIR$/../clotho3PythonAPI/clotho3API.py" />
-        <option value="$PROJECT_DIR$/phagebookAPI.py" />
         <option value="$PROJECT_DIR$/testAPI.py" />
         <option value="$PROJECT_DIR$/../clotho3PythonAPI/testAPI.py" />
+        <option value="$PROJECT_DIR$/phagebookAPI.py" />
+        <option value="$PROJECT_DIR$/CidarAPI.py" />
+        <option value="$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py" />
       </list>
     </option>
   </component>
@@ -118,6 +120,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -138,14 +144,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../clotho3PythonAPI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$3/Languages" value="Python" />
@@ -411,17 +413,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18393235" sideWeight="0.48313254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18393235" sideWeight="0.47355768" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3385542" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253012" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32451922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.49518073" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18393235" sideWeight="0.51686746" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18393235" sideWeight="0.5264423" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -467,14 +469,6 @@
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#104#378#0" expanded="false" />
-            <element signature="e#438#2963#0" expanded="false" />
-            <element signature="e#714#1761#0" expanded="false" />
-            <element signature="e#1809#1841#0" expanded="false" />
-            <element signature="e#1882#1905#0" expanded="false" />
-            <element signature="e#1945#2137#0" expanded="false" />
-            <element signature="e#3015#3480#0" expanded="false" />
-            <element signature="e#3522#3571#0" expanded="false" />
-            <element signature="e#3631#4190#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -483,17 +477,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="e#158#440#0" expanded="false" />
-            <element signature="e#527#767#0" expanded="false" />
-            <element signature="e#835#940#0" expanded="false" />
-            <element signature="e#999#1087#0" expanded="false" />
-            <element signature="e#1156#1254#0" expanded="false" />
-            <element signature="e#1348#1471#0" expanded="false" />
-            <element signature="e#1528#1614#0" expanded="false" />
-            <element signature="e#1679#1773#0" expanded="false" />
-            <element signature="e#1864#1984#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -512,17 +496,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#158#440#0" expanded="false" />
-            <element signature="e#527#767#0" expanded="false" />
-            <element signature="e#835#940#0" expanded="false" />
-            <element signature="e#999#1087#0" expanded="false" />
-            <element signature="e#1156#1254#0" expanded="false" />
-            <element signature="e#1348#1471#0" expanded="false" />
-            <element signature="e#1528#1614#0" expanded="false" />
-            <element signature="e#1679#1773#0" expanded="false" />
-            <element signature="e#1864#1984#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -533,14 +507,6 @@
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#104#378#0" expanded="false" />
-            <element signature="e#438#2963#0" expanded="false" />
-            <element signature="e#714#1761#0" expanded="false" />
-            <element signature="e#1809#1841#0" expanded="false" />
-            <element signature="e#1882#1905#0" expanded="false" />
-            <element signature="e#1945#2137#0" expanded="false" />
-            <element signature="e#3015#3480#0" expanded="false" />
-            <element signature="e#3522#3571#0" expanded="false" />
-            <element signature="e#3631#4190#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -561,17 +527,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="106" selection-start-line="30" selection-start-column="106" selection-end-line="30" selection-end-column="106" />
-          <folding>
-            <element signature="e#158#440#0" expanded="false" />
-            <element signature="e#527#767#0" expanded="false" />
-            <element signature="e#835#940#0" expanded="false" />
-            <element signature="e#999#1087#0" expanded="false" />
-            <element signature="e#1156#1254#0" expanded="false" />
-            <element signature="e#1348#1471#0" expanded="false" />
-            <element signature="e#1528#1614#0" expanded="false" />
-            <element signature="e#1679#1773#0" expanded="false" />
-            <element signature="e#1864#1984#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,13 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/websocket/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -706,9 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding>
-            <element signature="e#901#917#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,82 +668,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/clotho3API.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="e#1627#1744#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-408">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testAPI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phagebookAPI.py">
+    <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding>
-            <element signature="e#158#440#0" expanded="false" />
-            <element signature="e#527#767#0" expanded="false" />
-            <element signature="e#835#940#0" expanded="false" />
-            <element signature="e#999#1087#0" expanded="false" />
-            <element signature="e#1156#1254#0" expanded="false" />
-            <element signature="e#1348#1471#0" expanded="false" />
-            <element signature="e#1528#1614#0" expanded="false" />
-            <element signature="e#1679#1773#0" expanded="false" />
-            <element signature="e#1864#1984#0" expanded="false" />
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#104#378#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CidarAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="189">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="49" selection-end-column="45" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#104#378#0" expanded="false" />
-            <element signature="e#438#2963#0" expanded="false" />
-            <element signature="e#714#1761#0" expanded="false" />
-            <element signature="e#1809#1841#0" expanded="false" />
-            <element signature="e#1882#1905#0" expanded="false" />
-            <element signature="e#1945#2137#0" expanded="false" />
-            <element signature="e#3015#3480#0" expanded="false" />
-            <element signature="e#3522#3571#0" expanded="false" />
-            <element signature="e#3631#4190#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/CidarAPI.py">
+    <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/clotho3API.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phagebookAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testAPI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#104#378#0" expanded="false" />
-            <element signature="e#438#2889#0" expanded="false" />
-            <element signature="e#2941#3406#0" expanded="false" />
-            <element signature="e#3448#3497#0" expanded="false" />
-            <element signature="e#3557#4116#0" expanded="false" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../clotho3PythonAPI/testAPI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
